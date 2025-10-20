@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A professional, accessible explainer on why elbows matter, five fun facts, and an interactive elbow flexion simulator.">
+  <meta property="og:title" content="Elbows: Why They Matter">
+  <meta property="og:description" content="Explore the importance of elbows, read five fun facts, and try an interactive flexion simulator.">
+  <meta property="og:type" content="website">
+  <title>Elbows: Why They Matter</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-aura"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-orbs">
+      <span class="orb"></span>
+      <span class="orb"></span>
+      <span class="orb"></span>
+      <span class="orb"></span>
+      <span class="orb"></span>
+      <span class="orb"></span>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">💪</span>
+        <span class="brand-text">Elbows: Why They Matter</span>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#importance">Importance</a></li>
+          <li><a href="#facts">5 Fun Facts</a></li>
+          <li><a href="#simulator">Simulator</a></li>
+          <li><a href="#games">Games</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">🌗</button>
+    </div>
+  </header>
+
+  <main id="main" class="site-main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Small Joint. Huge Impact.</h1>
+          <p>
+            The elbow complex enables everyday independence—from lifting a coffee cup to typing, throwing,
+            and safely catching yourself during a fall. Explore why elbows matter, learn five quick facts,
+            and experiment with an interactive flexion simulator.
+          </p>
+          <div class="hero-cta">
+            <a class="button" href="#simulator">Try the simulator</a>
+            <a class="button button-secondary" href="#facts">Read 5 fun facts</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="punch" class="section alt" aria-labelledby="punch-title">
+      <div class="container">
+        <h2 id="punch-title">Punching simulator (elbow uppercut)</h2>
+        <p>
+          Time your click as the power meter fills and unleash an elbow uppercut. Force is computed from a
+          simple model using click timing (velocity proxy) and current elbow angle. This is a playful
+          educational demo, not biomechanics truth.
+        </p>
+        <div class="grid two v-center">
+          <div>
+            <div class="punch-panel">
+              <div class="meter" aria-label="Power meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="meter-fill" id="powerFill"></div>
+                <button id="punchBtn" type="button" class="meter-button" aria-describedby="punchHelp">CLICK to strike</button>
+              </div>
+              <div id="punchHelp" class="visually-hidden">Click when the bar is high for more power.</div>
+              <div class="outputs">
+                <div><span class="label">Angle</span> <span id="punchAngle">—</span></div>
+                <div><span class="label">Impact speed</span> <span id="impactSpeed">—</span></div>
+                <div><span class="label">Estimated force</span> <span id="impactForce">—</span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="arena" aria-label="Target arena">
+              <svg id="punchSvg" viewBox="0 0 500 240" width="100%" height="100%">
+                <!-- Ground / baseline -->
+                <rect x="0" y="200" width="500" height="40" fill="var(--bg-elev)" />
+                <!-- Target bag -->
+                <g id="target" transform="translate(380, 80)">
+                  <rect x="0" y="0" width="28" height="120" rx="12" fill="var(--brand)" />
+                  <circle cx="14" cy="60" r="10" fill="var(--accent)" />
+                </g>
+                <!-- Striker: upper arm + forearm (reuse colors) -->
+                <g id="striker" transform="translate(150, 160)">
+                  <g id="s-upper">
+                    <rect x="-80" y="-8" width="80" height="16" rx="8" fill="var(--arm)" />
+                    <circle cx="0" cy="0" r="10" fill="var(--joint)" />
+                  </g>
+                  <g id="s-fore" transform="rotate(-30)">
+                    <rect x="0" y="-8" width="90" height="16" rx="8" fill="var(--arm)" />
+                    <rect x="90" y="-10" width="20" height="20" rx="6" fill="var(--hand)" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="importance" class="section" aria-labelledby="importance-title">
+      <div class="container">
+        <h2 id="importance-title">Why elbows are important</h2>
+        <div class="grid two">
+          <div>
+            <p>
+              Functionally, your elbow is a hinge with a twist—allowing flexion/extension and facilitating
+              forearm rotation as part of the elbow complex. That range of motion positions your hand in space
+              for precise tasks and meaningful strength.
+            </p>
+            <ul class="checklist">
+              <li>Enables eating, grooming, and self‑care</li>
+              <li>Supports work tasks like typing and tool use</li>
+              <li>Allows athletic skills from throwing to lifting</li>
+              <li>Absorbs and redirects forces to protect the wrist and shoulder</li>
+              <li>Critical for balance strategies during trips and slips</li>
+            </ul>
+          </div>
+          <aside class="key-metric" aria-label="Typical ranges">
+            <div class="metric">
+              <div class="metric-value">0–150°</div>
+              <div class="metric-label">Typical flexion range</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">>1,000×/day</div>
+              <div class="metric-label">Estimated bends in daily life</div>
+            </div>
+            <p class="metric-note">Ranges vary by individual. This is educational content, not medical advice.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="facts" class="section alt" aria-labelledby="facts-title">
+      <div class="container">
+        <h2 id="facts-title">Five fun facts</h2>
+        <div class="cards">
+          <article class="card" tabindex="0">
+            <h3>It’s a team effort</h3>
+            <p>
+              The “elbow” is a complex of joints—humeroulnar, humeroradial, and the proximal radioulnar—working
+              together for hinge and rotational motion.
+            </p>
+          </article>
+          <article class="card" tabindex="0">
+            <h3>The funny bone isn’t a bone</h3>
+            <p>
+              That zing when you bump your elbow? It’s the ulnar nerve running through the cubital tunnel.
+            </p>
+          </article>
+          <article class="card" tabindex="0">
+            <h3>High‑performance hardware</h3>
+            <p>
+              Throwing and lifting can generate forces several times body weight—your elbow’s ligaments and
+              muscles do serious work.
+            </p>
+          </article>
+          <article class="card" tabindex="0">
+            <h3>Precision positioning</h3>
+            <p>
+              Elbow flexion positions your hand for fine motor control—typing, drawing, and instrument playing
+              all depend on it.
+            </p>
+          </article>
+          <article class="card" tabindex="0">
+            <h3>Ergonomics matter</h3>
+            <p>
+              Desk setups that keep elbows near 90–100° with supported forearms can reduce strain during
+              computer work.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulator" class="section" aria-labelledby="sim-title">
+      <div class="container">
+        <div class="grid two v-center">
+          <div>
+            <h2 id="sim-title">Elbow flexion simulator</h2>
+            <p>
+              Drag the slider to bend the forearm around the elbow. Typical functional flexion is roughly
+              0–150°. Try landing on 90°!
+            </p>
+            <form class="controls" onsubmit="return false;" aria-describedby="angleLive">
+              <label for="angleRange">Flexion angle</label>
+              <input id="angleRange" type="range" min="0" max="150" step="1" value="30" aria-valuemin="0" aria-valuemax="150" aria-valuenow="30">
+              <div class="control-row">
+                <output id="angleOut" for="angleRange" aria-live="polite" aria-atomic="true">30°</output>
+                <button id="randomize" type="button">Randomize</button>
+                <button id="reset" type="button" class="button-secondary">Reset</button>
+              </div>
+              <div id="angleLive" class="visually-hidden" aria-live="polite"></div>
+            </form>
+            <div class="pill" id="rangeHint" role="status" aria-live="polite">Within typical range</div>
+          </div>
+          <div>
+            <div class="sim-canvas" role="img" aria-label="Stylized arm with rotating forearm">
+              <svg id="armSvg" viewBox="0 0 400 300" width="100%" height="100%">
+                <!-- Upper arm -->
+                <g id="upperarm">
+                  <rect x="60" y="140" width="140" height="28" rx="14" fill="var(--arm)" />
+                </g>
+                <!-- Elbow joint at (200,154) visually centered on the rectangles -->
+                <circle id="elbow" cx="200" cy="154" r="18" fill="var(--joint)" />
+                <!-- Forearm, pivoting around the elbow center -->
+                <g id="forearm" transform="rotate(-30 200 154)">
+                  <rect x="200" y="140" width="140" height="28" rx="14" fill="var(--arm)" />
+                  <!-- Hand -->
+                  <rect x="340" y="138" width="26" height="32" rx="8" fill="var(--hand)" />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="section alt" aria-labelledby="games-title">
+      <div class="container">
+        <div class="grid two v-center">
+          <div>
+            <h2 id="games-title">Games dashboard</h2>
+            <p>Quickly find and launch your games. Add your own links and tags.</p>
+            <div class="games-toolbar" role="search">
+              <label for="gameSearch" class="visually-hidden">Search games</label>
+              <input id="gameSearch" type="search" placeholder="Search by name or tag" autocomplete="off">
+              <button id="addGameBtn" type="button" class="button">Add game</button>
+            </div>
+            <form id="gameForm" class="game-form" onsubmit="return false;" hidden>
+              <div class="form-row">
+                <label for="gameName">Name</label>
+                <input id="gameName" type="text" placeholder="e.g., Chess" required>
+              </div>
+              <div class="form-row">
+                <label for="gameUrl">URL</label>
+                <input id="gameUrl" type="url" placeholder="https://example.com/play" required>
+              </div>
+              <div class="form-row">
+                <label for="gameTags">Tags</label>
+                <input id="gameTags" type="text" placeholder="comma separated (e.g., board, strategy)">
+              </div>
+              <div class="form-actions">
+                <button id="saveGame" type="submit" class="button">Save</button>
+                <button id="cancelGame" type="button" class="button button-secondary">Cancel</button>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div id="gamesGrid" class="games-grid" aria-live="polite" aria-busy="false"></div>
+            <div id="gamesEmpty" class="games-empty" hidden>No games yet. Add your first one!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Built for learning. Not medical advice. © <span id="year"></span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
+
+
